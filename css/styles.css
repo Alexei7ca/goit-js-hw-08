@@ -1,0 +1,153 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #ffffff;
+  color: #2e2f42;
+}
+
+main {
+  padding: 100px 156px;
+}
+
+.gallery {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 360px);
+  gap: 24px;
+}
+
+.gallery-item {
+  width: 360px;
+  height: 300px;
+  overflow: hidden;
+}
+
+.gallery-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.gallery-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gallery-image:hover {
+  transform: scale(1.05);
+}
+
+.lightbox {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.lightbox-image-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(100vw - 160px);
+  height: calc(100vh - 80px);
+  overflow: hidden;
+}
+
+.lightbox-image {
+  position: absolute;
+  display: block;
+  max-width: calc(100vw - 160px);
+  max-height: calc(100vh - 80px);
+  transition: transform 0.35s ease;
+}
+
+.lightbox-image-enter-from-right {
+  transform: translateX(100vw);
+}
+
+.lightbox-image-enter-from-left {
+  transform: translateX(-100vw);
+}
+
+.lightbox-image-active {
+  transform: translateX(0);
+}
+
+.lightbox-image-exit-to-left {
+  transform: translateX(-100vw);
+}
+
+.lightbox-image-exit-to-right {
+  transform: translateX(100vw);
+}
+
+.lightbox-button {
+  position: absolute;
+  top: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+  font-size: 32px;
+  line-height: 1;
+  cursor: pointer;
+  transform: translateY(-50%);
+  transition: background-color 0.3s ease;
+}
+
+.lightbox-button:hover,
+.lightbox-button:focus {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.lightbox-button-prev {
+  left: 32px;
+}
+
+.lightbox-button-next {
+  right: 32px;
+}
+
+.lightbox-close-button {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+  font-size: 30px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.lightbox-close-button:hover,
+.lightbox-close-button:focus {
+  background-color: rgba(255, 255, 255, 0.3);
+}
